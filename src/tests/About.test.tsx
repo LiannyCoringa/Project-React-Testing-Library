@@ -1,11 +1,11 @@
-import App from "../App";
-import renderWithRouter from "../renderWithRouter";
-import { screen } from "@testing-library/react";
+import { screen } from '@testing-library/react';
+import App from '../App';
+import renderWithRouter from '../renderWithRouter';
 
 test('Testando a pagina About', () => {
-  renderWithRouter(<App />, {route: '/about'});
+  renderWithRouter(<App />, { route: '/about' });
 
-  const h2 = screen.getByRole('heading', {name: 'About Pokédex'});
+  const h2 = screen.getByRole('heading', { name: 'About Pokédex' });
   const pOne = screen.getByText('This application simulates a Pokédex, a digital encyclopedia containing all Pokémon');
   const pTwo = screen.getByText('One can filter Pokémon by type, and see more details for each one of them');
   const img = screen.getByAltText('Pokédex');
