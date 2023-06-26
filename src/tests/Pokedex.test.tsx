@@ -11,41 +11,49 @@ test('Testando Pokedex', async () => {
   const buttonNext = screen.getByRole('button', { name: 'Próximo Pokémon' });
   const img = screen.getByAltText('Pikachu sprite');
   expect(img).toHaveProperty('src', 'https://archives.bulbagarden.net/media/upload/b/b2/Spr_5b_025_m.png');
+
   // Segundo
   await user.click(buttonNext);
-  const img1 = screen.getByAltText(pokemonList[1].name + ' sprite');
+  const img1 = screen.getByAltText(`${pokemonList[1].name} sprite`);
   expect(img1).toHaveProperty('src', pokemonList[1].image);
-  //Terceiro
+
+  // Terceiro
   await user.click(buttonNext);
-  const img2 = screen.getByAltText(pokemonList[2].name + ' sprite');
+  const img2 = screen.getByAltText(`${pokemonList[2].name} sprite`);
   expect(img2).toHaveProperty('src', pokemonList[2].image);
-  //Quarto
+
+  // Quarto
   await user.click(buttonNext);
-  const img3 = screen.getByAltText(pokemonList[3].name + ' sprite');
+  const img3 = screen.getByAltText(`${pokemonList[3].name} sprite`);
   expect(img3).toHaveProperty('src', pokemonList[3].image);
-  //Quinto
+
+  // Quinto
   await user.click(buttonNext);
-  const img4 = screen.getByAltText(pokemonList[4].name + ' sprite');
+  const img4 = screen.getByAltText(`${pokemonList[4].name} sprite`);
   expect(img4).toHaveProperty('src', pokemonList[4].image);
-  //Sexto
+
+  //  Sexto
   await user.click(buttonNext);
-  const img5 = screen.getByAltText(pokemonList[5].name + ' sprite');
+  const img5 = screen.getByAltText(`${pokemonList[5].name} sprite`);
   expect(img5).toHaveProperty('src', pokemonList[5].image);
-  //Setimo
+
+  //  Setimo
   await user.click(buttonNext);
-  const img6 = screen.getByAltText(pokemonList[6].name + ' sprite');
+  const img6 = screen.getByAltText(`${pokemonList[6].name} sprite`);
   expect(img6).toHaveProperty('src', pokemonList[6].image);
-  //Oitavo
+
+  //  Oitavo
   await user.click(buttonNext);
-  const img7 = screen.getByAltText(pokemonList[7].name + ' sprite');
+  const img7 = screen.getByAltText(`${pokemonList[7].name} sprite`);
   expect(img7).toHaveProperty('src', pokemonList[7].image);
-  //Nono
+
+  //  Nono
   await user.click(buttonNext);
-  const img8 = screen.getByAltText(pokemonList[8].name + ' sprite');
+  const img8 = screen.getByAltText(`${pokemonList[8].name} sprite`);
   expect(img8).toHaveProperty('src', pokemonList[8].image);
 
   await user.click(buttonNext);
-  const img9 = screen.getByAltText(pokemonList[0].name + ' sprite');
+  const img9 = screen.getByAltText(`${pokemonList[0].name} sprite`);
   expect(img9).toHaveProperty('src', pokemonList[0].image);
 });
 
@@ -72,4 +80,4 @@ test('Testando botoes dos tipos', async () => {
   await user.click(buttonAll);
   const imgPikachu = screen.getByAltText('Pikachu sprite');
   expect(imgPikachu).toHaveProperty('src', 'https://archives.bulbagarden.net/media/upload/b/b2/Spr_5b_025_m.png');
-})
+});
