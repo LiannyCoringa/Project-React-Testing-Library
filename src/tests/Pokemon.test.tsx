@@ -8,7 +8,9 @@ test('Testa o card do Pokemon', async () => {
 
   const name = screen.getByText(pokemonList[0].name);
   const type = screen.getByTestId('pokemon-type');
-  const weight = screen.getByText(`Average weight: ${pokemonList[0].averageWeight.value} ${pokemonList[0].averageWeight.measurementUnit}`);
+  const weight = screen.getByText(`Average weight:
+    ${pokemonList[0].averageWeight.value}
+    ${pokemonList[0].averageWeight.measurementUnit}`);
   const img = screen.getByAltText(`${pokemonList[0].name} sprite`);
   expect(img).toHaveProperty('src', pokemonList[0].image);
   expect(name).toBeInTheDocument();
