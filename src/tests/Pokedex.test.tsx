@@ -1,7 +1,7 @@
-import { screen } from "@testing-library/react";
-import App from "../App";
-import renderWithRouter from "../renderWithRouter";
-import pokemonList from "../data";
+import { screen } from '@testing-library/react';
+import App from '../App';
+import renderWithRouter from '../renderWithRouter';
+import pokemonList from '../data';
 
 test('Testando Pokedex', async () => {
   const { user } = renderWithRouter(<App />);
@@ -71,6 +71,7 @@ test('Testando botoes dos tipos', async () => {
   await user.click(buttonNext);
   const img2 = screen.getByAltText('Rapidash sprite');
   expect(img2).toHaveProperty('src', 'https://archives.bulbagarden.net/media/upload/5/58/Spr_5b_078.png');
+
   const buttonPsychic = screen.getByRole('button', { name: pokemonList[4].type });
   expect(buttonPsychic).toBeInTheDocument();
 
