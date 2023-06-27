@@ -9,8 +9,6 @@ test('Testando o Pokemon Details', async () => {
   const h2Details = screen.getByRole('heading', { name: `${pokemonList[0].name} Details` });
   expect(h2Details).toBeInTheDocument();
 
-//   expect(screen.getByRole('link', { name: 'More details' })).not.toBeInTheDocument();
-
   const h2Summary = screen.getByRole('heading', { name: 'Summary' });
   const parag = screen.getByText(pokemonList[0].summary);
   expect(h2Summary).toBeInTheDocument();
