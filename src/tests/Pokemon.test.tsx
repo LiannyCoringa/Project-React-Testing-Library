@@ -5,10 +5,12 @@ import pokemonList from '../data';
 
 test('Testa o card do Pokemon', async () => {
   const { user } = renderWithRouter(<App />);
+  const peso = pokemonList[0].averageWeight.value;
+  const medida = pokemonList[0].averageWeight.measurementUnit;
 
   const name = screen.getByText(pokemonList[0].name);
   const type = screen.getAllByText(pokemonList[0].type);
-  const weight = screen.getByText('Average weight: 6.0 kg');
+  const weight = screen.getByText(`Average weight: ${peso} ${medida}`);
   const img = screen.getByAltText(`${pokemonList[0].name} sprite`);
   expect(img).toHaveProperty('src', pokemonList[0].image);
   expect(name).toBeInTheDocument();
