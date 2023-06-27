@@ -7,14 +7,13 @@ test('Testa o card do Pokemon', async () => {
   const { user } = renderWithRouter(<App />);
 
   const name = screen.getByText(pokemonList[0].name);
-  const type = screen.getByTestId('pokemon-type');
+  const type = screen.getAllByText(pokemonList[0].type);
   const weight = screen.getByText('Average weight: 6.0 kg');
   const img = screen.getByAltText(`${pokemonList[0].name} sprite`);
   expect(img).toHaveProperty('src', pokemonList[0].image);
   expect(name).toBeInTheDocument();
-  expect(type).toBeInTheDocument();
   expect(weight).toBeInTheDocument();
-  expect(type).toHaveTextContent(pokemonList[0].type);
+  expect(type).toHaveLength(2);
 
   const link = screen.getByRole('link', { name: 'More details' });
   expect(link).toHaveAttribute('href', `/pokemon/${pokemonList[0].id}`);
